@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
         id          = "ru.gnbmag.app"
         versionCode = "10"
-        version     = "1.1.0">
+        version     = "1.2.0">
 
-    <name>ТЕСТ. GNBmag</name>
+    <name>GNBmag</name>
 
     <description>
         Магазин инструмента для ГНБ
@@ -13,10 +15,10 @@
 
     <author>Tadapp</author>
 
+    <preference name='phonegap-version' value='cli-9.0.0' />
+
     <plugin name='cordova-plugin-splashscreen' />
     <plugin name='cordova-plugin-inappbrowser' />
-
-    <preference name='phonegap-version' value='cli-9.0.0' />
 
     <gap:plugin name='onesignal-cordova-plugin' spec='2.4.5' source='npm' />
 
@@ -29,6 +31,12 @@
 
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashScreenSpinnerColor" value="#FF7900" />
+    
+    <platform name="android">
+      <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+          <application android:usesCleartextTraffic="true" />
+      </edit-config>
+    </platform>
 
 
     <platform name="android">
